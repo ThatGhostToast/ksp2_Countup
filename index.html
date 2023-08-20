@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <title>Countup Timer</title>
+</head>
+<body>
+    <div class="main">
+        <div id="timer-container">
+        <h1 id="caption">Days Since Kerbal Space Program 2 Has Been Out With No Multiplayer</h1>
+        <div id="timer">
+            <div class="timer-element" id="days">Days: 0</div>
+            <div class="timer-element" id="hours">Hours: 0</div>
+            <div class="timer-element" id="minutes">Minutes: 0</div>
+            <div class="timer-element" id="seconds">Seconds: 0</div>
+        </div>
+        </div>
+    </div>
+
+  <script>
+    // Set the target date (February 24, 2023)
+    const targetDate = new Date("February 24, 2023 00:00:00").getTime();
+
+    // Update the timer every second
+    const updateTimer = () => {
+      const currentDate = new Date().getTime();
+      const timeDifference = currentDate - targetDate;
+
+      const seconds = Math.floor(timeDifference / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
+
+      document.getElementById("days").innerHTML = `Days: ${days}`;
+      document.getElementById("hours").innerHTML = `Hours: ${hours % 24}`;
+      document.getElementById("minutes").innerHTML = `Minutes: ${minutes % 60}`;
+      document.getElementById("seconds").innerHTML = `Seconds: ${seconds % 60}`;
+    };
+
+    // Call the updateTimer function initially and then every second
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
