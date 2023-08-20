@@ -5,19 +5,24 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000;
-}
+    background-color: rgba(0, 0, 0, .37);
+    background-image: url('space-image.png'); /* Path to your space image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+  }
   
-#timer-container {
+  #timer-container {
     text-align: center;
-}
+  }
   
   #timer {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,8 +32,8 @@ body {
   
   .timer-element {
     margin: 0 10px;
-    font-family: lato;
   }
+  
 
   #caption {
     color: #ffffff;
